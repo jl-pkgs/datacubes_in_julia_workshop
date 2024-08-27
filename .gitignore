@@ -1,4 +1,4 @@
 /.quarto/
 /_site/
 _freeze/
-examples/data
+examples/data/*.zarr
