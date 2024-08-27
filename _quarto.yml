@@ -16,18 +16,14 @@ website:
     - intro_ndarrays.qmd
     - section: "Julia Introduction"
       contents:
-      - intro.qmd
+      - intro_julia.qmd
       - intro-repl.qmd
       - href: intro-pkg.qmd
         text: Package Manager
-    - section: "Julia Geo Ecosystem"
+    - section: "Exercises"
       contents:
-      - vectordata.qmd
-      - rasterdata.qmd
-    - section: "Raster data handling"
-      contents:
-      - chunking.qmd
-
+      - exercise_timeseries.qmd
+      - exercise_yaxarrays.qmd
 format:
   html:
     theme: cosmo
