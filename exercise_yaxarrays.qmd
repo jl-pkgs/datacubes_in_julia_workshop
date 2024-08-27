@@ -2,12 +2,19 @@
 engine: julia
 title: Exercise YAXArrays
 author: "Felix Cremer, Fabian Gans"
+institute: "Max Planck Institute for Biogeochemistry 
+
+
+[NFDI4Earth Advancing Tools](https://nfdi4earth.de/2facilitate/advancing-tools)"
 format: 
     revealjs:
         logo: images/logo2_mpi_nfdi4earth.png
+        number-sections: false
+        footer: "[Datacubes in Julia](https://juliadatacubes.github.io/datacubes_in_julia_workshop/)"
 
 execute:
     echo: true
+    eval: false
 ---
 
 # Aim of the exercise session
@@ -21,9 +28,11 @@ execute:
 ## Dataset download
 
 ```{julia}
+#| eval: false
 using YAXArrays
 using Zarr
 using DiskArrays
+using DimensionalData
 era5url = "https://s3.bgc-jena.mpg.de:9000/deepextremes/v3/ERA5Cube.zarr"
 era5 = Cube(era5url)
 timedim = dimnum(era5, Ti)
