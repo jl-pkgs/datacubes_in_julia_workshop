@@ -16,16 +16,16 @@ execute:
     echo: true
 ---
 
-## Data structures
+## Data cubes
 
-- ESDL data cube image
+![Earth System Data Cube](images/esdl.png){alt="A three by three layout of data cubes with different data types."}
 
 ## Data formats
 
 - Geotiff
 - Zarr
 - NetCDF
-
+- ...
 
 ## Chunking
 
