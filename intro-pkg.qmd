@@ -17,15 +17,46 @@ To switch to the pkg mode use the closing square bracket.
 
 This will switch the prompt of your REPL and now you can do package management tasks.
 
+::: {.callout-note}
+From now on we will assume you are in the pkg REPL mode
+:::
+
+- get some help
+```julia
+help
+```
+
 ## Activating your environment
+
+- Activate your 
 ```julia
 activate .
-``` 
+# You can use any path that is on your computer
+```
+
+- See what is installed
+```julia
+st
+```
+- Download all installed packages
+```julia
+instantiate
+```
 
 ## Package handling
+- Add a package
 ```julia
 add Example
-
+```
+- Remove a package
+```julia
+rm Example
+```
+- Update packages
+```julia
+up
+up PackageName
+```
 
 ### Further reading
 
