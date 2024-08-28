@@ -38,11 +38,6 @@ execute:
 Different chunking structures
 :::
 
-## Datacube analysis
-
-## Concept of multidimensional array storage
-
-## Contrast to databases
 
 ## Pyramids
 
