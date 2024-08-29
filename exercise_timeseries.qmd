@@ -31,5 +31,62 @@ execute:
 - Histogram per decade
 
 
+```julia
+# Data loading
+using DataFrames
+using CSV
+jena = CSV.read("examples/data/jena.csv", DataFrame)
+t2mmints = jena[!, :Variable_t2mmin]
+datets = jena[!, :]
+```
+
+## Mean seasonal cycle
+
+```julia
+function yearhistsview(ts, dates)
+    years = unique(year.(jena.Ti))
+    yearbins = []
+    for y in years 
+        ybegin = findfirst(x->year(x)==y, dates)
+        ylast = findlast(x-> year(x)==y, dates)
+        ydata = view(ts,ybegin:ylast)
+        push!(yearbins, ydata)
+    end
+end
+
+yearbins = yearhist(jena.Variable_t2m, jena.Ti)
+
+``` 
+
+```julia
+dts_clim = DateTime(2020, 1, 1, 0):Day(1):DateTime(2020, 12, 31, 23)
+
+t2m_clim = zeros(length(dts_clim))
+
+@time begin
+
+for (i, dt) in enumerate(dts_clim)
+
+    t2m_clim[i] = mean(view(t2m_jena, dayofyear(dt) .== dayofyear.(dts_jena)))
+
+end
+
+end
+
+@time begin
+
+for (i, dt) in enumerate(dts_clim)
+
+    t2m_clim[i] = mean(view(t2m_jena, dayofyear(dt) .== dayofyear.(dts_jena)))
+
+end
+
+end
+``` 
 # Plotting
+
+```julia
+using GLMakie
+plot(jena.Ti, t2mmints)
+``` 
 
